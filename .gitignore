@@ -1,0 +1,15 @@
+# Cline task history (local session data, not for sharing)
+.cline_storage/
+
+# Private configs (real hostnames, credentials, etc.)
+.cursor/configs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+*.swp
+*.swo
+
