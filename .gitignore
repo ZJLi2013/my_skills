@@ -1,8 +1,11 @@
 # Cline task history (local session data, not for sharing)
 .cline_storage/
 
-# Private configs (real hostnames, credentials, etc.)
+# Private configs (real hostnames, credentials, etc.) — skills/ is tracked
 .cursor/configs/
+
+# Explicitly track skills (override any broad .cursor/ rules)
+!.cursor/skills/
 
 # OS
 .DS_Store
