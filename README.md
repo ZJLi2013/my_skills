@@ -9,14 +9,18 @@
 ```
 my_skills/
 ├── .cursor/
-│   ├── skills/                           # Cursor Agent Skills 源码
-│   │   ├── dockerfile_generator/         # Python 项目 Dockerfile 生成
-│   │   ├── remote-ssh-github-auto/       # 远端 SSH + GitHub 认证修复
-│   │   └── local-push-remote-pull-test/  # 本地 push + 远端 pull/test 工作流
-│   └── configs/                          # 本地私有配置（git-ignored，不入库）
-│       ├── gpu_nodes.env                 # GPU 节点凭证（用户自建）
-│       ├── gpu_nodes.list                # SSH 节点清单（用户自建）
-│       └── gpu_nodes.list.example        # 节点清单模板
+│   ├── skills/                              # Cursor Agent Skills
+│   │   ├── cursor-overnight-task-manager/   # 批量夜间 GPU 测试
+│   │   ├── dockerfile_generator/            # Python Dockerfile 生成
+│   │   ├── experiment-driven-doc/           # 实验驱动文档追踪
+│   │   ├── remote-ssh-github-auto/          # 远端 SSH + GitHub 认证
+│   │   └── local-push-remote-pull-test/     # 本地 push + 远端 pull/test
+│   ├── agents/                              # Cursor Agent 定义
+│   │   ├── replan.md                        # 实验 review & 优先级调整
+│   │   └── code_run_plan.md                 # 代码执行 & 实验闭环
+│   └── configs/                             # 本地私有配置（git-ignored）
+│       ├── gpu_nodes.list                   # SSH 节点清单（用户自建）
+│       └── gpu_nodes.list.example           # 节点清单模板
 └── .gitignore
 ```
 
@@ -26,9 +30,18 @@ my_skills/
 
 | skill | 描述 |
 |-------|------|
+| `cursor-overnight-task-manager` | 批量夜间测试：读取 repo 列表 → SSH 到远端 AMD GPU → headless run → 报告 |
+| `experiment-driven-doc` | 实验驱动文档：假设 → 设计 → 执行 → 结果 → 分析 → next step 全流程追踪 |
 | `dockerfile_generator` | 为 Python 生成生产级 Dockerfile |
 | `remote-ssh-github-auto` | SSH Agent Forwarding + 远端 GitHub 认证修复 |
 | `local-push-remote-pull-test` | 本地 push → 远端 pull → 远端测试完整工作流 |
+
+### Agents
+
+| agent | 描述 |
+|-------|------|
+| `replan` | 实验文档 review、分析质量检查、优先级调整 |
+| `code_run_plan` | 基于实验计划执行代码编写、远端运行、结果回填 |
 
 ---
 
