@@ -4,8 +4,13 @@
 # Private configs (real hostnames, credentials, etc.) — skills/ is tracked
 .cursor/configs/
 
-# Explicitly track skills (override any broad .cursor/ rules)
+# Explicitly track skills and agents (override any broad .cursor/ rules)
 !.cursor/skills/
+!.cursor/agents/
+
+# Overnight task manager runtime outputs
+overnight-results/
+input-list.txt
 
 # OS
 .DS_Store
